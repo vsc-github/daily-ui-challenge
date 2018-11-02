@@ -20,7 +20,7 @@ module.exports = {
       }
     ],
     author: {
-      name: 'ByteGasm!',
+      name: 'bytegasm',
       email: 'vishwas.s.chouhan@gmail.com',
       linkedin: 'https://www.linkedin.com/in/vschouhan/',
       twitter: 'https://twitter.com/bytegasm',
