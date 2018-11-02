@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     url: 'https://lumen.netlify.com',
-    title: 'Blog by John Doe',
-    subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    title: 'UI Webdev Challenge',
+    subtitle: 'An (almost) daily attempt at picking and building a UI component from Behance or Dribble as a challenge.',
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
@@ -20,13 +20,12 @@ module.exports = {
       }
     ],
     author: {
-      name: 'John Doe',
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vk: '#'
+      name: 'ByteGasm!',
+      email: 'vishwas.s.chouhan@gmail.com',
+      linkedin: 'https://www.linkedin.com/in/vschouhan/',
+      twitter: 'https://twitter.com/bytegasm',
+      github: 'https://github.com/vsc-github',
+      stackoverflow: 'https://stackoverflow.com/users/5005669/vishwas-singh-chouhan'
     }
   },
   plugins: [

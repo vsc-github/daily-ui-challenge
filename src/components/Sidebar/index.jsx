@@ -45,7 +45,7 @@ class Sidebar extends React.Component {
             {authorBlock}
           </div>
           <div>
-            <Menu data={menu} />
+            {/*<Menu data={menu} />*/}
             <Links data={author} />
             <p className="sidebar__copyright">
               {copyright}
@@ -71,11 +71,10 @@ export const conponentQuery = graphql`
     author {
       name
       email
-      telegram
+      linkedin
+      stackoverflow
       twitter
       github
-      rss
-      vk
     }
   }
 `;
