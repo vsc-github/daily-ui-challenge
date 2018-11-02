@@ -32,7 +32,7 @@ class PostTemplateDetails extends React.Component {
 
     const commentsBlock = (
       <div>
-        <Disqus postNode={post} shortName={disqusShortname} url={url} />
+        <Disqus postNode={post} shortName={disqusShortname} url={url}/>
       </div>
     );
 
@@ -42,21 +42,27 @@ class PostTemplateDetails extends React.Component {
         <div className="post-single">
           <div className="post-single__inner">
             <h1 className="post-single__title">{post.frontmatter.title}</h1>
-            <div className="post-single__body" dangerouslySetInnerHTML={{ __html: post.html }} />
+            {/*<div className="post-single__body" dangerouslySetInnerHTML={{ __html: post.html }} />*/}
+            <p>An Essay on Typography by Eric Gill takes the reader back to the year 1930. The year
+              when a conflict between two worlds came to its term. The machines of the industrial
+              world finally took over the handicrafts.</p>
+            <img src="https://cdn.dribbble.com/users/2558123/screenshots/5307512/9-26dribbble_4x.png" alt=""/>
+            <img src="https://cdn.dribbble.com/users/1738563/screenshots/4908226/artboard.png" alt=""/>
             <div className="post-single__date">
-              <em>Published {moment(post.frontmatter.date).format('D MMM YYYY')}</em>
+              <em>Published {moment(post.frontmatter.date)
+                .format('D MMM YYYY')}</em>
             </div>
           </div>
           <div className="post-single__footer">
-            {tagsBlock}
-            <hr />
+            {/*{tagsBlock}
+            <hr/>
             <p className="post-single__footer-text">
               {subtitle}
               <a href={`https://twitter.com/${author.twitter}`} target="_blank" rel="noopener noreferrer">
                 <br /> <strong>{author.name}</strong> on Twitter
               </a>
             </p>
-            {disqusShortname && commentsBlock}
+            {disqusShortname && commentsBlock}*/}
           </div>
         </div>
       </div>
