@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import moment from 'moment';
 import Disqus from '../Disqus/Disqus';
+import { One, Two } from '../../challenges/index';
 import './style.scss';
 
 class PostTemplateDetails extends React.Component {
@@ -36,6 +37,23 @@ class PostTemplateDetails extends React.Component {
       </div>
     );
 
+    const renderChallenge = (name) => {
+      switch (name) {
+        case 'one':
+          return <One/>;
+        case 'two':
+          return <Two/>;
+        default:
+          return <div>
+            <img
+              src="https://cdn.dribbble.com/users/2558123/screenshots/5307512/9-26dribbble_4x.png"
+              alt=""/>
+            <img src="https://cdn.dribbble.com/users/1738563/screenshots/4908226/artboard.png"
+                 alt=""/>
+          </div>;
+      }
+    };
+
     return (
       <div>
         {homeBlock}
@@ -44,8 +62,8 @@ class PostTemplateDetails extends React.Component {
             <h1 className="post-single__title">{post.frontmatter.title}</h1>
             {/*<div className="post-single__body" dangerouslySetInnerHTML={{ __html: post.html }} />*/}
             <p>{post.frontmatter.description}</p>
-            <img src="https://cdn.dribbble.com/users/2558123/screenshots/5307512/9-26dribbble_4x.png" alt=""/>
-            <img src="https://cdn.dribbble.com/users/1738563/screenshots/4908226/artboard.png" alt=""/>
+            {renderChallenge(post.frontmatter.name)}
+
             <div className="post-single__date">
               <em>Published {moment(post.frontmatter.date)
                 .format('D MMM YYYY')}</em>

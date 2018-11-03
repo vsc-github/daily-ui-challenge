@@ -9,6 +9,7 @@ tags:
   - "Design"
   - "Typography"
   - "Web Development"
+name: "five"
 image: "https://cdn.dribbble.com/users/823823/screenshots/2459205/day_100.gif"
 description: "An Essay on Typography by Eric Gill takes the reader back to the year 1930. The year when a conflict between two worlds came to its term. The machines of the industrial world finally took over the handicrafts."
 ---
