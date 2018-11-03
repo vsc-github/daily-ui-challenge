@@ -5,7 +5,7 @@ import './style.scss';
 
 class Post extends React.Component {
   render() {
-    const { title, date, category, description } = this.props.data.node.frontmatter;
+    const { title, date, category, description, image } = this.props.data.node.frontmatter;
     const { slug, categorySlug } = this.props.data.node.fields;
 
     return (
@@ -13,7 +13,7 @@ class Post extends React.Component {
         <Link to={slug} className="post__left">
           <div className="post__left__wrap">
             <img
-              src="https://cdn.dribbble.com/users/823823/screenshots/2453764/dribbble_098_2x_1x.png"
+              src={image}
               alt=""/>
           </div>
         </Link>
