@@ -51,12 +51,18 @@ class One extends React.Component {
         <div className="maincard">
           <div className="nav"></div>
           <div className="contacts">
+            <div className="search">
+              <img src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541416229/dailyui/1/search.svg" alt=""/>
+              <input type="text" placeholder="Search"/>
+            </div>
+            <div className="list">
             {
               'somanycontacts'.split('')
                 .map((contact, key) => <Contact setActiveIndexToFunc={this.setActiveIndexTo}
                                                 index={key}
                                                 selected={this.state.activeIndex === key}/>)
             }
+            </div>
           </div>
           <div className="thread"></div>
         </div>
