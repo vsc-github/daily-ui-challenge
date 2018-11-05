@@ -1,0 +1,74 @@
+.contact{
+    display: flex;
+    padding: 5% 4% 5% 6%;
+    position: relative;
+    cursor: pointer;
+}
+.contact:hover{
+    background-color: #f4edf0;
+}
+
+.contact .bar {
+    width: 87%;
+    position: absolute;
+    top: 0;
+    left: 4%;
+    right: 0;
+    height: 2px;
+    background-color: #eeebeb;
+    margin: auto;
+}
+
+.contact .avatar{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact .avatar img{
+    width: 75%;
+    border-radius: 100%;
+    margin: 0;
+}
+.contact .text{
+    width: 70%;
+    height: 100%;
+}
+.contact .text .name{
+    font-size: .9rem;
+    color: #3e3e3e;
+    font-weight: 600;
+}
+.contact .text .msg{
+    max-width: 17rem;
+    font-size: .8rem;
+    color: #515151;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 500;
+}
+.contact .stats{
+    width: 10%;
+    height: 100%;
+    text-align: center;
+}
+
+.contact .stats .time{
+    font-size: .9rem;
+    color: #949494;
+    font-weight: 500;
+}
+
+.contact .stats .unread{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ef89a9;
+    font-size: .7rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 100%;
+    padding: 3% 20%;
+}
