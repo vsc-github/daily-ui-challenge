@@ -4,10 +4,12 @@ import './contact.css';
 
 class Contact extends React.Component {
   render() {
-    const { contact, selected } = this.props;
+    const { contact, selected, index } = this.props;
 
     return (
-      <div className="contact" style={selected ? {
+      <div className="contact"
+           onClick={() => this.props.setActiveIndexToFunc(index)}
+           style={selected ? {
         backgroundColor: 'white',
         boxShadow: '0 10px 20px 10px #f3eaed'
       } : null}>

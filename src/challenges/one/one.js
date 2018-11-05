@@ -8,7 +8,7 @@ class One extends React.Component {
     super();
     this.state = {
       activeIndex: 2,
-      contacts : [
+      contacts: [
         {
           name: 'Vanessa',
           img: '',
@@ -16,25 +16,32 @@ class One extends React.Component {
           thread: [
             {
               text: 'When should we meet? Maybe at 2-3pm or later?',
-              self: true,
+              self: true
             },
             {
-              text: "Let\'s meet at best pizza house. I haven't been there in a long time. I heard they just came ip with a new pizza.",
-              self: false,
+              text: 'Let\'s meet at best pizza house. I haven\'t been there in a long time. I heard they just came ip with a new pizza.',
+              self: false
             },
             {
               text: 'That sounds like a good idea!',
-              self: true,
+              self: true
             },
             {
-              text: "How  about going to see a movie? Cinemax 26 on Broadway is showing Enchanted.",
-              self: false,
+              text: 'How  about going to see a movie? Cinemax 26 on Broadway is showing Enchanted.',
+              self: false
             }
           ]
         }
       ]
     };
+
+    this.setActiveIndexTo = this.setActiveIndexTo.bind(this);
   }
+
+  setActiveIndexTo(activeIndex) {
+    this.setState({ activeIndex });
+  }
+
 
   render() {
     return (<div className="base">
@@ -44,22 +51,12 @@ class One extends React.Component {
         <div className="maincard">
           <div className="nav"></div>
           <div className="contacts">
-            <Contact />
-            <Contact selected />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
+            {
+              'somanycontacts'.split('')
+                .map((contact, key) => <Contact setActiveIndexToFunc={this.setActiveIndexTo}
+                                                index={key}
+                                                selected={this.state.activeIndex === key}/>)
+            }
           </div>
           <div className="thread"></div>
         </div>
