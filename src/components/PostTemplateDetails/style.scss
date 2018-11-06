@@ -23,6 +23,14 @@
         @include margin-top(1);
         @include margin-bottom(0);
     }
+    &__resources span {
+        font-weight: bold;
+        margin-right: .5rem;
+    }
+    &__resources a {
+        color: #444;
+        text-decoration: underline;
+    }
     &__body {
         & figure {
             @include margin-bottom(1);

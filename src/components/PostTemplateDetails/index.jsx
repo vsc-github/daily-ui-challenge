@@ -41,8 +41,6 @@ class PostTemplateDetails extends React.Component {
       switch (name) {
         case 'one':
           return <One/>;
-        case 'two':
-          return <Two/>;
         default:
           return <div>
             <img
@@ -61,12 +59,26 @@ class PostTemplateDetails extends React.Component {
           <div className="post-single__inner">
             <h1 className="post-single__title">{post.frontmatter.title}</h1>
             {/*<div className="post-single__body" dangerouslySetInnerHTML={{ __html: post.html }} />*/}
-            <p>{post.frontmatter.description}</p>
+            <p style={{ textAlign: 'center' }}>{post.frontmatter.description}</p>
+
             {renderChallenge(post.frontmatter.name)}
 
             <div className="post-single__date">
               <em>Published {moment(post.frontmatter.date)
                 .format('D MMM YYYY')}</em>
+            </div>
+
+            <div className="post-single__resources">
+              <span>Design:</span>
+              <a href={post.frontmatter.design} target="_blank">
+                {post.frontmatter.design}
+              </a>
+            </div>
+            <div className="post-single__resources">
+              <span>Code:</span>
+              <a href={post.frontmatter.code} target="_blank">
+                {post.frontmatter.code}
+              </a>
             </div>
           </div>
           <div className="post-single__footer">

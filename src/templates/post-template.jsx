@@ -50,6 +50,8 @@ export const pageQuery = graphql`
         date
         description
         name
+        design
+        code
       }
     }
   }
