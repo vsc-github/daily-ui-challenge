@@ -8,6 +8,7 @@ class One extends React.Component {
     super();
     this.state = {
       activeIndex: 2,
+      activeTab: 1,
       contacts: [
         {
           name: 'Vanessa',
@@ -42,6 +43,10 @@ class One extends React.Component {
     this.setState({ activeIndex });
   }
 
+  setActiveTabTo(activeTab) {
+    this.setState({ activeTab });
+  }
+
 
   render() {
     return (<div className="base">
@@ -49,7 +54,35 @@ class One extends React.Component {
         <img src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541247085/dailyui/texture.jpg"
              alt="" className="hero"/>
         <div className="maincard">
-          <div className="nav"></div>
+          <div className="nav">
+            <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="" className="user"/>
+
+            <div style={this.state.activeTab !== 0 ? null : { borderLeft: '3px solid #f77ca5' }}
+                 onClick={() => this.setActiveTabTo(0)}>
+              <img
+                src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541439709/dailyui/1/user.svg"
+                alt=""/></div>
+            <div style={this.state.activeTab !== 1 ? null : { borderLeft: '3px solid #f77ca5' }}
+                 onClick={() => this.setActiveTabTo(1)}>
+              <img
+                src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541440507/dailyui/1/speech.svg"
+                alt=""/></div>
+            <div style={this.state.activeTab !== 2 ? null : { borderLeft: '3px solid #f77ca5' }}
+                 onClick={() => this.setActiveTabTo(2)}>
+              <img
+                src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541440342/dailyui/1/setting.svg"
+                alt=""/></div>
+            <div style={this.state.activeTab !== 3 ? null : { borderLeft: '3px solid #f77ca5' }}
+                 onClick={() => this.setActiveTabTo(3)}>
+              <img
+                src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541440418/dailyui/1/phone.svg"
+                alt=""/></div>
+            <div style={this.state.activeTab !== 4 ? null : { borderLeft: '3px solid #f77ca5' }}
+                 onClick={() => this.setActiveTabTo(4)}>
+              <img
+                src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541440570/dailyui/1/info.svg"
+                alt=""/></div>
+          </div>
           <div className="contacts">
             <div className="search">
               <img
@@ -68,6 +101,8 @@ class One extends React.Component {
           </div>
           <div className="thread">
             <div className="top">
+              <img src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541485622/windowops.png"
+                   alt="" className="ops"/>
               <img src="https://randomuser.me/api/portraits/women/63.jpg" alt=""/>
               <div className="details">
                 <div className="name">Vanessa</div>
