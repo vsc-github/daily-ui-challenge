@@ -174,13 +174,15 @@
     padding: 0 8% 0 16%;
     overflow-y: scroll;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .chg .maincard .thread .middle .message {
     margin-top: 1rem;
 }
 
-.chg .maincard .thread .middle .message:last-of-type {
+.chg .maincard .thread .middle .message:first-of-type {
     margin-bottom: 2rem;
 }
 

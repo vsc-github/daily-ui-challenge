@@ -1,6 +1,6 @@
 import React from 'react';
 import Contact from './components/contact';
-
+import contacts from './contacts';
 import './one.css';
 
 class One extends React.Component {
@@ -9,31 +9,7 @@ class One extends React.Component {
     this.state = {
       activeIndex: 2,
       activeTab: 1,
-      contacts: [
-        {
-          name: 'Vanessa',
-          img: '',
-          location: '',
-          thread: [
-            {
-              text: 'When should we meet? Maybe at 2-3pm or later?',
-              self: true
-            },
-            {
-              text: 'Let\'s meet at best pizza house. I haven\'t been there in a long time. I heard they just came ip with a new pizza.',
-              self: false
-            },
-            {
-              text: 'That sounds like a good idea!',
-              self: true
-            },
-            {
-              text: 'How  about going to see a movie? Cinemax 26 on Broadway is showing Enchanted.',
-              self: false
-            }
-          ]
-        }
-      ]
+      contacts
     };
 
     this.setActiveIndexTo = this.setActiveIndexTo.bind(this);
@@ -55,7 +31,7 @@ class One extends React.Component {
              alt="" className="hero"/>
         <div className="maincard">
           <div className="nav">
-            <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="" className="user"/>
+            <img src="https://pbs.twimg.com/profile_images/1009793767715397638/C3Vh-_bg.jpg" alt="" className="user"/>
 
             <div style={this.state.activeTab !== 0 ? null : { borderLeft: '3px solid #f77ca5' }}
                  onClick={() => this.setActiveTabTo(0)}>
@@ -92,10 +68,11 @@ class One extends React.Component {
             </div>
             <div className="list">
               {
-                'somanycontacts'.split('')
-                  .map((contact, key) => <Contact setActiveIndexToFunc={this.setActiveIndexTo}
-                                                  index={key}
-                                                  selected={this.state.activeIndex === key}/>)
+                this.state.contacts.map((contact, key) => <Contact
+                  contact={contact}
+                  setActiveIndexToFunc={this.setActiveIndexTo}
+                  index={key}
+                  selected={this.state.activeIndex === key}/>)
               }
             </div>
           </div>
@@ -103,10 +80,10 @@ class One extends React.Component {
             <div className="top">
               <img src="https://res.cloudinary.com/dzas6ep30/image/upload/v1541485622/windowops.png"
                    alt="" className="ops"/>
-              <img src="https://randomuser.me/api/portraits/women/63.jpg" alt=""/>
+              <img src={this.state.contacts[this.state.activeIndex].img} alt=""/>
               <div className="details">
-                <div className="name">Vanessa</div>
-                <div className="time">18:05 Los-Angeles</div>
+                <div className="name">{this.state.contacts[this.state.activeIndex].name}</div>
+                <div className="time">{this.state.contacts[this.state.activeIndex].location}</div>
               </div>
               <div className="state">
                 Online
@@ -115,26 +92,13 @@ class One extends React.Component {
             </div>
             <div className="middle">
               <div className="rope">
-                <div className="message">
-                  <div className="time">16:05</div>
-                  <div className="text">When should we meet? Maybe at 2-3pm or later?</div>
-                </div>
-                <div className="message me">
-                  <div className="time">16:08</div>
-                  <div className="text">Let's meet at best pizza house. I haven't been there in a
-                    long time. I heard they just came ip with a new pizza.
-                  </div>
-                </div>
-                <div className="message">
-                  <div className="time">16:15</div>
-                  <div className="text">When should we meet? Maybe at 2-3pm or later?</div>
-                </div>
-                <div className="message me">
-                  <div className="time">16:23</div>
-                  <div className="text">Let's meet at best pizza house. I haven't been there in a
-                    long time. I heard they just came ip with a new pizza.
-                  </div>
-                </div>
+                {
+                  this.state.contacts[this.state.activeIndex].thread.map((contact, key) => (<div
+                    className={`message ${contact.self ? 'me' : ''}`} key={key}>
+                    <div className="time">{contact.time}</div>
+                    <div className="text">{contact.text}</div>
+                  </div>))
+                }
               </div>
             </div>
             <div className="bottom">
